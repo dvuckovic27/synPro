@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ConfigurationFragment">
+    <fragment
+        android:id="@+id/ConfigurationFragment"
+        android:name="com.metalac.scanner.app.view.configuration.ConfigurationFragment"
+        tools:layout="@layout/fragment_configuration">
+
+        <action
+            android:id="@+id/action_ConfigurationFragment_to_MenuFragment"
+            app:destination="@id/MenuFragment"
+            app:popUpTo="@id/ConfigurationFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/MenuFragment"
+        android:name="com.metalac.scanner.app.view.menu.MenuFragment"
+        tools:layout="@layout/fragment_menu">
+
+        <action
+            android:id="@+id/action_MenuFragment_to_InventoryListsFragment"
+            app:destination="@id/InventoryListsFragment" />
+
+        <action
+            android:id="@+id/action_MenuFragment_to_SynchronizationFragment"
+            app:destination="@id/SynchronizationFragment" />
+
+        <action
+            android:id="@+id/action_MenuFragment_to_ConfigurationFragment"
+            app:destination="@id/ConfigurationFragment"
+            app:popUpTo="@id/MenuFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/InventoryListsFragment"
+        android:name="com.metalac.scanner.app.view.inventorylist.InventoryListsFragment"
+        tools:layout="@layout/fragment_inventory_lists">
+
+        <action
+            android:id="@+id/action_InventoryListsFragment_to_InventoryFragment"
+            app:destination="@id/InventoryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SynchronizationFragment"
+        android:name="com.metalac.scanner.app.view.synchronization.SynchronizationFragment"
+        tools:layout="@layout/fragment_synchronization">
+
+        <action
+            android:id="@+id/action_SynchronizationFragment_to_MenuFragment"
+            app:destination="@id/MenuFragment"
+            app:popUpTo="@id/SynchronizationFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/InventoryFragment"
+        android:name="com.metalac.scanner.app.view.inventory.fragments.InventoryFragment"
+        tools:layout="@layout/fragment_inventory">
+
+        <action
+            android:id="@+id/action_InventoryFragment_to_ExtraInfoFragment"
+            app:destination="@id/ExtraInfoFragment" />
+
+        <action
+            android:id="@+id/action_InventoryFragment_to_SearchFragment"
+            app:destination="@id/SearchFragment" />
+        <argument
+            android:name="itemId"
+            android:defaultValue=""
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ExtraInfoFragment"
+        android:name="com.metalac.scanner.app.view.inventory.fragments.ExtraInfoFragment"
+        tools:layout="@layout/fragment_extra_info">
+        <argument
+            android:name="masterId"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="quantity"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="productName"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="inventoryItemId"
+            android:defaultValue="0L"
+            app:argType="long" />
+        <argument
+            android:name="isUpdateAction"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/SearchFragment"
+        android:name="com.metalac.scanner.app.view.inventory.fragments.SearchFragment"
+        tools:layout="@layout/fragment_search">
+
+        <action
+            android:id="@+id/action_SearchFragment_to_SearchedDataFragment"
+            app:destination="@id/SearchedDataFragment" />
+        <action
+            android:id="@+id/action_SearchFragment_to_SearchedInventoryDataFragment"
+            app:destination="@id/SearchedInventoryDataFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SearchedDataFragment"
+        android:name="com.metalac.scanner.app.view.inventory.fragments.SearchedDataFragment"
+        tools:layout="@layout/fragment_searched_data">
+
+        <action
+            android:id="@+id/action_SearchedDataFragment_to_InventoryFragment"
+            app:destination="@id/InventoryFragment"
+            app:popUpTo="@id/InventoryFragment"
+            app:popUpToInclusive="true" />
+
+        <argument
+            android:name="queryMasterItem"
+            android:defaultValue="@null"
+            app:argType="com.metalac.scanner.app.models.QueryMasterItem"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SearchedInventoryDataFragment"
+        android:name="com.metalac.scanner.app.view.inventory.fragments.SearchedInventoryDataFragment"
+        tools:layout="@layout/fragment_searched_inventory_data">
+
+        <argument
+            android:name="queryMasterItem"
+            android:defaultValue="@null"
+            app:argType="com.metalac.scanner.app.models.QueryMasterItem"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_SearchedInventoryDataFragment_to_ExtraInfoFragment"
+            app:destination="@id/ExtraInfoFragment" />
+        <action
+            android:id="@+id/action_SearchedInventoryDataFragment_to_InventoryFragment"
+            app:destination="@id/InventoryFragment"
+            app:popUpTo="@id/InventoryFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

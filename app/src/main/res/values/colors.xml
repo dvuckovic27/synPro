@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background">#FAFAFA</color>
+    <color name="main_color">#123293</color>
+    <color name="toolbar_title">#FFFFFF</color>
+    <color name="edittext_text_color_enabled">#123293</color>
+    <color name="edittext_hint_color_enabled">#80123293</color>
+    <color name="gray_disabled_color">#CCCCCC</color>
+    <color name="dark_gray_text">#666666</color>
+    <color name="attention_icon_color">#FFC107</color>
+    <color name="gray">#FFBDBDBD</color>
+    <color name="dark_blue">#051643</color>
+    <color name="text_input_hint_default">#90000000</color>
+    <color name="inventory_item_bg">#D1DAF6</color>
+    <color name="inventory_voided_item_bg">#EBE6B2</color>
+    <color name="inventory_void_item_bg">#ED9797</color>
+    <color name="light_gray">#9A9A9D</color>
+    <color name="badge_void">#A31E1E</color>
+    <color name="badge_voided">#7A6A00</color>
+    <color name="preview_item_price_text_color">#161617</color>
+</resources>

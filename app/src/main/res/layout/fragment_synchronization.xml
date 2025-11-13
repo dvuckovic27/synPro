@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/llDatesContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_normal"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/corner_radius_normal"
+        app:cardElevation="@dimen/inventory_item_card_elevation"
+        app:layout_constraintBottom_toTopOf="@id/llButtonsContainer"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/llDateContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_normal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilLastSync"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/last_sync_date">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLastSync"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:inputType="date"
+                    android:textColor="@color/dark_gray_text"
+                    android:textSize="@dimen/text_size_normal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilLastExport"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:hint="@string/last_export_date">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLastExport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:inputType="date"
+                    android:textColor="@color/dark_gray_text"
+                    android:textSize="@dimen/text_size_normal" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:id="@+id/llButtonsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llDatesContainer">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btGetMaster"
+            style="@style/ScannerReaderButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_normal"
+            android:text="@string/getMaster" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btSendInventoryLists"
+            style="@style/ScannerReaderButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_normal"
+            android:enabled="false"
+            android:text="@string/sendInventoryLists" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btDeleteInventories"
+            style="@style/ScannerReaderButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_normal"
+            android:enabled="false"
+            android:text="@string/deleteInventories" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

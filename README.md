@@ -1,2 +1,4 @@
-# sysPro
-Aplikacija za popis
+## metalac-scanner-app
+### License
+See [LICENSE](LICENSE).
+

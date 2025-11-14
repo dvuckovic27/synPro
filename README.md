@@ -1,2 +1,2 @@
-# sysPro
+# synPro
 Aplikacija za popis
